@@ -176,10 +176,14 @@ def main(argv):
 
    mode     = Modes.Info
    filename = "test"
+   profile  = "default"
 
    try:
-      opts, args = getopt.getopt(argv, "dD:f:hvV?",
-              ("debug", "debug-level=", "file=", "help", "verbose", "version"))
+      opts, args = getopt.getopt(argv, "dD:f:hp:vV?",
+              ("debug", "debug-level=",
+               "file=", "help",
+               "profile=",
+               "verbose", "version"))
    except getopt.error as err:
       usage()
       return 1
@@ -195,6 +199,8 @@ def main(argv):
       elif opt in ('-f', '--file'):
          mode = Modes.Parse
          filename        = arg
+      elif opt in ('-p', '--profile'):
+         profile         = arg
       elif opt in ('-v', '--verbose'):
          verbose_flg     = True
       elif opt in ('-v', '--version'):

@@ -1,0 +1,10 @@
+
+Errors from Cloudformation [
+  {
+    LogicalResourceId: aasdasdasd,
+    ResourceType: AWS:CloudFormation::Stack,
+    StatusReason: The following...
+  },
+  ...
+]
+
